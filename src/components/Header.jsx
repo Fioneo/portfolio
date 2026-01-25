@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Menu, Moon, Globe, Sun } from "lucide-react";
-import { motion } from "motion/react";
+import { Menu, Moon, Globe, Sun, X } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 const translations = {
   en: {
     home: "Home",
@@ -39,7 +39,7 @@ function Header({
           onClick={() => scrollToSection("home")}
         >
           <span className="text-primary">&lt;</span>
-          Dev
+          Fioneo.dev
           <span className="text-primary">/&gt;</span>
         </motion.div>
         <nav className="hidden md:flex gap-8">
@@ -61,7 +61,7 @@ function Header({
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.4 }}
             whileHover={{ scale: 1.05 }}
             onClick={onLanguageToggle}
             className="p-2 rounded-lg hover:bg-bg transition-colors"
@@ -72,7 +72,7 @@ function Header({
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.4 }}
             whileHover={{ scale: 1.05 }}
             onClick={onThemeToggle}
             className="p-2 rounded-lg hover:bg-bg transition-colors"
@@ -83,7 +83,7 @@ function Header({
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
+            transition={{ duration: 0.4 }}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-lg hover:bg-bg transition-colors md:hidden"
             aria-label="Toggle mobile menu"
@@ -91,6 +91,34 @@ function Header({
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </motion.button>
         </div>
+
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.nav
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="absolute top-16 left-0 right-0 bg-background/80 backdrop-blur-md border-b border-border md:hidden"
+            >
+              <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+                {Object.entries(t).map(([key, value], index) => (
+                  <motion.button
+                    key={key}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    onClick={() => scrollToSection(key)}
+                    className="text-left text-base hover:text-primary transition-colors py-2 border-l-2 border-transparent hover:border-primary pl-4"
+                  >
+                    <span className="font-mono text-primary mr-2">{">"}</span>
+                    {value}
+                  </motion.button>
+                ))}
+              </div>
+            </motion.nav>
+          )}
+        </AnimatePresence>
       </header>
     </div>
   );

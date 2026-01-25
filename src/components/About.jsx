@@ -4,7 +4,7 @@ const translations = {
   en: {
     title: "About Me",
     description:
-      "I'm a passionate frontend developer with a keen eye for design and a love for creating seamless user experiences. I specialize in building responsive, accessible, and performant web applications.",
+      "I’m a junior frontend developer with a strong interest in building clean and interactive web applications. I enjoy creating projects with React, Tailwind CSS,and Typescript.I’m eager to learn, grow, and contribute to real-world projects.",
     features: [
       {
         icon: Code2,
@@ -26,7 +26,7 @@ const translations = {
   ru: {
     title: "Обо мне",
     description:
-      "Я увлеченный фронтенд-разработчик с острым взглядом на дизайн и любовью к созданию бесшовных пользовательских интерфейсов. Специализируюсь на создании адаптивных, доступных и производительных веб-приложений.",
+      "Я начинающий фронтенд-разработчик с интересом к созданию чистых и интерактивных веб-приложений. Люблю работать с React, Tailwind CSS и Typescript.Готов учиться, развиваться и участвовать в реальных проектах.",
     features: [
       {
         icon: Code2,

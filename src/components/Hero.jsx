@@ -32,7 +32,7 @@ function Hero({ language, scrollToSection }) {
       className="flex items-center justify-center px-8 pt-20 min-h-screen"
     >
       <div className="container mx-auto max-w-4xl">
-        <div className="grid grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-4">
             <span className="text-muted text-lg mb-2">{t.greeting}</span>
             <h1 className="text-2xl font-medium mb-2">

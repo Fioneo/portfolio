@@ -10,7 +10,7 @@ const translations = {
       {
         title: "Crypto Dashboard",
         description:
-          "CryptoTracker is a modern single-page application for tracking cryptocurrencies in real time.",
+          "Single-page application for tracking cryptocurrencies in real time. It provides global market statistics, a sortable and searchable top-100 coins table, and detailed coin pages with interactive charts",
         tags: ["Tailwind", "Javascript", "Chart.js"],
         links: {
           demo: "https://fioneo-crypto-tracker.vercel.app/",
@@ -19,7 +19,8 @@ const translations = {
       },
       {
         title: "React Shop",
-        description: "Shop built with React, Tailwind CSS, and Lucide React",
+        description:
+          "A modern shop built with React, featuring cart and wishlist functionality, a responsive UI, smooth user interactions, and real-time notifications.",
         tags: ["React", "lucide-react", "Tailwind"],
         links: {
           demo: "https://fioneo-react-shop.vercel.app/",
@@ -51,30 +52,30 @@ const translations = {
     viewLive: "Демо",
     projects: [
       {
-        title: "E-Commerce Платформа",
+        title: "Трекер криптовалют",
         description:
-          "Полнофункциональная платформа для онлайн-покупок с корзиной и оплатой",
-        tags: ["React", "TypeScript", "Stripe"],
+          "Одностраничное приложение для отслеживания криптовалют в реальном времени. Здесь можно посмотреть общую статистику рынка, топ-100 монет с поиском и сортировкой, а также подробную информацию по каждой монете с интерактивными графиками.",
+        tags: ["tailwind", "javascript", "Chart.js"],
         links: {
           demo: "https://fioneo-crypto-tracker.vercel.app/",
           github: "https://github.com/Fioneo/crypto-tracker",
         },
       },
       {
-        title: "Менеджер Задач",
+        title: "Интернет-магазин",
         description:
-          "Совместный менеджер задач с обновлениями в реальном времени",
-        tags: ["Next.js", "Firebase", "Tailwind"],
+          "Современный интернет-магазин с корзиной и избранным. Проект имеет адаптивный дизайн, уведомления и удобный пользовательский интерфейс.",
+        tags: ["React", "lucide-react", "Tailwind"],
         links: {
           demo: "https://fioneo-react-shop.vercel.app/",
           github: "https://github.com/Fioneo/react-shop",
         },
       },
       {
-        title: "Погодная Панель",
+        title: "Менеджер задач",
         description:
-          "Красивое погодное приложение с прогнозами, картами и метриками",
-        tags: ["React", "API", "Charts"],
+          "Простой и современный список задач.Поддерживает добавление, редактирование, выполнение задач и сохранением даннных.",
+        tags: ["React", "lucide-react", "tailwind"],
         links: {
           demo: "https://fioneo-todo.vercel.app/",
           github: "https://github.com/Fioneo/react-todo",
