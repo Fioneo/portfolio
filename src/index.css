@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@theme {
+  --color-primary: var(--primary);
+  --color-second: var(--second);
+  --color-muted: var(--muted);
+
+  --color-bg: var(--bg);
+  --color-card: var(--bg-card);
+
+  --color-border: var(--border);
+  --color-background: var(--background);
+  --color-primary-foreground: var(--primary-foreground);
+}
+:root {
+  --primary: rgb(99, 102, 242);
+  --second: rgb(10, 10, 10);
+  --muted: rgb(112, 112, 130);
+  --bg: rgb(242, 245, 245);
+  --card: rgb(10, 10, 15);
+  --border: rgba(0, 0, 0, 0.1);
+  --background: #ffffff;
+  --primary-foreground: #ffffff;
+}
+.dark {
+  --primary: rgb(130, 140, 247);
+  --second: rgb(230, 232, 235);
+  --muted: rgb(156, 163, 176);
+  --bg: rgb(31, 31, 46);
+  --card: rgb(26, 26, 36);
+  --border: #27273a;
+  --background: #0a0a0f;
+  --primary-foreground: #0a0a0f;
+}
+@layer base {
+  body {
+    @apply bg-background text-second;
+  }
+}
