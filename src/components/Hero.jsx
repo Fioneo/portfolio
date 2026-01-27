@@ -3,14 +3,14 @@ import { motion } from "motion/react";
 import Typewriter from "typewriter-effect";
 const translations = {
   en: {
-    greeting: "Hi, I'm Max",
+    greeting: "Hi, I'm",
     role: "Frontend Developer",
     description: "Building amazing web experiences with modern technologies",
     cta: "View My Work",
     terminal: "$ npm run dev",
   },
   ru: {
-    greeting: "Привет, я Макс",
+    greeting: "Привет, я",
     role: "Фронтенд Разработчик",
     description:
       "Создаю потрясающие веб-приложения с современными технологиями",
@@ -73,7 +73,7 @@ function Hero({ language, scrollToSection }) {
               className="flex gap-4 mt-4"
             >
               {[
-                { icon: Github, href: "#" },
+                { icon: Github, href: "https://github.com/Fioneo" },
                 { icon: Linkedin, href: "#" },
                 { icon: Mail, href: "#" },
               ].map((social, index) => (

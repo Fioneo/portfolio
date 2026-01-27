@@ -75,7 +75,7 @@ function About({ language }) {
                 whileHover={{ y: -10 }}
                 className="relative group"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-primary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative bg-card p-6 rounded-lg border border-border hover:border-primary/50 transition-colors h-full">
                   <div className="mb-4 p-3 bg-primary/10 w-fit rounded-lg">
                     <feature.icon className="text-primary" size={24} />

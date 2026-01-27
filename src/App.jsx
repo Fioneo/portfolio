@@ -8,6 +8,7 @@ import { LoadingAnimation } from "./components/LoadingAnimation";
 import { AnimatePresence } from "motion/react";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Skills from "./components/Skills";
 function App() {
   const [theme, setTheme] = useState(() => {
     const key = localStorage.getItem("theme");
@@ -51,6 +52,7 @@ function App() {
           <main>
             <Hero language={language} scrollToSection={scrollToSection} />
             <About language={language} />
+            <Skills language={language} />
             <Projects language={language} />
             <Contact language={language} />
           </main>

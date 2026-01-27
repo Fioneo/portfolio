@@ -57,7 +57,7 @@ function Contact({ language }) {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">Email</h3>
-                <p className="text-muted-foreground">contact@developer.com</p>
+                <p className="text-muted-foreground">fioneo.dev@gmail.com</p>
               </div>
             </div>
 
@@ -67,7 +67,13 @@ function Contact({ language }) {
               </div>
               <div>
                 <h3 className="font-semibold mb-1">Telegram</h3>
-                <p className="text-muted-foreground">@developer</p>
+                <a
+                  href="https://t.me/fioneo_dev"
+                  target="_blank"
+                  className="text-muted-foreground"
+                >
+                  @fioneo_dev
+                </a>
               </div>
             </div>
 
@@ -83,7 +89,7 @@ function Contact({ language }) {
                 <span className="text-primary">await</span>
               </div>
               <div className="ml-4">
-                <span className="text-[#dcdcaa]">sendMessage</span>
+                <span className="text-[#F0DB4F]">sendMessage</span>
                 <span className="text-foreground">(</span>
                 <span className="text-[#ce9178]">message</span>
                 <span className="text-foreground">);</span>
@@ -129,6 +135,9 @@ function Contact({ language }) {
               type="submit"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              onClick={(e) => {
+                e.preventDefault();
+              }}
               className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
             >
               <Send size={18} />
