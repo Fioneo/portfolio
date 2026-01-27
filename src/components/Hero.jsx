@@ -74,13 +74,14 @@ function Hero({ language, scrollToSection }) {
             >
               {[
                 { icon: Github, href: "https://github.com/Fioneo" },
-                { icon: Linkedin, href: "#" },
-                { icon: Mail, href: "#" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/fioneo/" },
+                { icon: Mail, href: "mailto:fioneo.dev@email.com" },
               ].map((social, index) => (
                 <motion.a
                   key={index}
                   href={social.href}
                   whileHover={{ y: -5 }}
+                  target="_blank"
                   className="p-3 rounded-lg bg-bg hover:bg-bg/80 transition-colors"
                 >
                   <social.icon size={20} />

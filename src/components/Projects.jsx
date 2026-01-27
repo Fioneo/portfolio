@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import {
   Github,
-  ExternalLin,
+  ExternalLink,
   TrendingUp,
   ShoppingCart,
   CheckSquare,
@@ -53,6 +53,10 @@ const translations = {
         description:
           "Creative portfolio site with animations and interactive elements",
         tags: ["React", "Motion", "Tailwind"],
+        links: {
+          demo: "https://fioneo-portfolio.vercel.app/",
+          github: "https://github.com/Fioneo/portfolio",
+        },
       },
     ],
   },
