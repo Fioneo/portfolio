@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { Mail, MessageSquare, Send } from "lucide-react";
-import { useState } from "react";
 const translations = {
   en: {
     title: "Get In Touch",
@@ -55,10 +54,10 @@ function Contact({ language }) {
               <div className="p-3 bg-primary/10 rounded-lg">
                 <Mail className="text-primary" size={24} />
               </div>
-              <div>
+              <a href="mailto:fioneo.dev@gmail.com">
                 <h3 className="font-semibold mb-1">Email</h3>
                 <p className="text-muted-foreground">fioneo.dev@gmail.com</p>
-              </div>
+              </a>
             </div>
 
             <div className="flex items-start gap-4 p-6 bg-card rounded-lg border border-border">
@@ -102,7 +101,7 @@ function Contact({ language }) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-card p-6 rounded-lg border border-border space-y-4"
+            className="bg-card p-6 rounded-lg border border-border space-y-4 "
           >
             <div>
               <input

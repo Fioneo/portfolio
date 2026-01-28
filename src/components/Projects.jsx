@@ -105,6 +105,10 @@ const translations = {
         description:
           "Креативный сайт-портфолио с анимациями и интерактивными элементами",
         tags: ["React", "Motion", "Tailwind"],
+        links: {
+          demo: "https://fioneo-portfolio.vercel.app/",
+          github: "https://github.com/Fioneo/portfolio",
+        },
       },
     ],
   },
@@ -132,64 +136,75 @@ function Projects({ language }) {
           <p className="text-muted-foreground text-lg">{t.subtitle}</p>
         </motion.div>
         <ul className="grid md:grid-cols-2 gap-6">
-          {t.projects.map((project, index) => (
-            <motion.li
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="group relative"
-            >
-              <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-primary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative bg-card p-6 rounded-lg border border-border group-hover:border-primary/50 transition-colors h-full flex flex-col">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <div className="w-8 h-8 rounded bg-primary/20"></div>
+          {t.projects.map((project, index) => {
+            const Icon = project.icon;
+
+            return (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="group relative"
+              >
+                <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-primary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+                <div className="relative bg-card p-6 rounded-lg border border-border group-hover:border-primary/50 transition-colors h-full flex flex-col">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="p-2 bg-primary/10 rounded-lg">
+                      <div className="w-8 h-8 rounded bg-primary/20 flex items-center justify-center">
+                        {Icon && <Icon size={20} />}
+                      </div>
+                    </div>
+
+                    <div className="flex gap-2">
+                      <motion.a
+                        href={project.links?.github}
+                        target="_blank"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="p-2 rounded-lg hover:bg-accent transition-colors"
+                        aria-label={t.viewCode}
+                      >
+                        <Github size={18} />
+                      </motion.a>
+
+                      <motion.a
+                        href={project.links?.demo}
+                        target="_blank"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="p-2 rounded-lg hover:bg-accent transition-colors"
+                        aria-label={t.viewLive}
+                      >
+                        <ExternalLink size={18} />
+                      </motion.a>
+                    </div>
                   </div>
-                  <div className="flex gap-2">
-                    <motion.a
-                      href={project.links?.github}
-                      target="_blank"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="p-2 rounded-lg hover:bg-accent transition-colors"
-                      aria-label={t.viewCode}
-                    >
-                      <Github size={18} />
-                    </motion.a>
-                    <motion.a
-                      href={project.links?.demo}
-                      target="_blank"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="p-2 rounded-lg hover:bg-accent transition-colors"
-                      aria-label={t.viewLive}
-                    >
-                      <ExternalLink size={18} />
-                    </motion.a>
+
+                  <h3 className="text-xl font-semibold mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 grow">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-3 py-1 bg-bg text-sm rounded-full font-mono"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
-
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-muted-foreground mb-4 grow">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-3 py-1 bg-bg text-sm rounded-full font-mono"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.li>
-          ))}
+              </motion.li>
+            );
+          })}
         </ul>
         <motion.div
           initial={{ opacity: 0 }}
